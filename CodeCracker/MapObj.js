@@ -3,16 +3,31 @@ class MapObj {
     this.biMap = {}
   }
 
-  initializeBiMap (obj) {
-    console.log('initializeBiMap invoked!')
+  createMap (obj) {
+    const keys = Object.keys(obj)
+    const vals = Object.values(obj)
+    for (let i = 0; i < keys.length; i++) {
+      this.insertPair(keys[i], vals[i])
+      this.insertPair(vals[i], keys[i])
+    }
   }
 
-  insertPair () {
-    console.log('insertPair invoked!')
+  printMap () {
+    console.log(this.biMap)
   }
 
-  validatePair () {
-    console.log('validatePair invoked!')
+  printVal (v) {
+    console.log(this.biMap[v])
+  }
+
+  insertPair (k, v) {
+    if (this.validateUnique(k)) {
+      this.biMap[k] = v
+    }
+  }
+
+  validateUnique (k) {
+    return this.biMap[k] === undefined
   }
 }
 
@@ -23,4 +38,7 @@ const initObj = {
 }
 
 const myMapObj = new MapObj()
-myMapObj.insertPair()
+myMapObj.createMap(initObj)
+myMapObj.printMap()
+myMapObj.printVal('k1')
+myMapObj.printVal('v1')
