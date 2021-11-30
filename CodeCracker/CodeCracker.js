@@ -2,11 +2,14 @@
 // https://startfunction.com/bidirectional-map-javascript/
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 // https://stackoverflow.com/questions/10699492/bi-directional-map-in-java
+
+// first our Map class
 class MapObj {
   constructor () {
     this.biMap = {}
   }
-
+  // double space complexity -> works -> refactor later
+  // concept is (until I refactor) is 2 make obj mirror of self
   createMap (obj) {
     const keys = Object.keys(obj)
     const vals = Object.values(obj)
