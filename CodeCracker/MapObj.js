@@ -31,14 +31,4 @@ class MapObj {
   }
 }
 
-const initObj = {
-  k1: 'v1',
-  k2: 'v2',
-  k3: 'v3'
-}
-
-const myMapObj = new MapObj()
-myMapObj.createMap(initObj)
-myMapObj.printMap()
-myMapObj.printVal('k1')
-myMapObj.printVal('v1')
+const Map = new MapObj()
