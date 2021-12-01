@@ -8,7 +8,7 @@ class MapObj {
   constructor () {
     this.biMap = {}
   }
-  // double space complexity -> works -> refactor later
+  //  space complexity x 2 -> works -> refactor later
   // concept is (until I refactor) is 2 make obj mirror of self
   createMap (obj) {
     const keys = Object.keys(obj)
@@ -30,7 +30,7 @@ class MapObj {
   insertPair (k, v) {
     if (this.validateUnique(k)) {
       this.biMap[k] = v
-    }
+    } // need to handle faulty k/v input
   }
 
   validateUnique (k) {
@@ -38,18 +38,16 @@ class MapObj {
   }
 }
 
-// Map, an instance of MapObj
+// Instantiate
 const Map = new MapObj()
-
-// 
 
 // array of all lowercase alphabeet chars
 const alphabet = Array.from(Array(26))
   .map((e, i) => i + 65)
   .map(x => String.fromCharCode(x))
-
+console.log("alphabet: ", alphabet)
 // array of encryption scheme chars
-const encryptionScheme = [
+const cipherTxt = [
   '!',
   ')',
   '"',
@@ -78,4 +76,12 @@ const encryptionScheme = [
   'o'
 ]
 
-const decryptKey = {}
+// Map needs to produce bidirectional obj
+const mapFeed = {}
+
+// now 2 prep mapFeed
+alphabet.forEach((char, i) => { // index 2 access cipherTxt
+  mapFeed[char.toLowerCase()] = cipherTxt[i]
+})
+
+console.log(mapFeed)
