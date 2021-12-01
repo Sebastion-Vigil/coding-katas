@@ -38,9 +38,6 @@ class MapObj {
   }
 }
 
-// Instantiate
-const Map = new MapObj()
-
 // array of all lowercase alphabeet chars
 const alphabet = Array.from(Array(26))
   .map((e, i) => i + 65)
@@ -84,4 +81,7 @@ alphabet.forEach((char, i) => { // index 2 access cipherTxt
   mapFeed[char.toLowerCase()] = cipherTxt[i]
 })
 
-console.log(mapFeed)
+// Instantiate
+const Map = new MapObj()
+Map.createMap(mapFeed)
+Map.printMap()
