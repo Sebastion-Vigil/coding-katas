@@ -72,6 +72,8 @@ const cipherTxt = [
   'n',
   'o'
 ]
+console.log("alpabet length: ", alphabet.length)
+console.log("cipherTxt length: ", cipherTxt.length)
 
 // Map needs to produce bidirectional obj
 const mapFeed = {}
@@ -80,6 +82,8 @@ const mapFeed = {}
 alphabet.forEach((char, i) => { // index 2 access cipherTxt
   mapFeed[char.toLowerCase()] = cipherTxt[i]
 })
+
+console.log(mapFeed)
 
 // Instantiate
 const Map = new MapObj()
