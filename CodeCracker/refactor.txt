@@ -1,0 +1,18 @@
+## Change MapObj Class ##
+
+<-        MVP            ->
+
+ - MapObj creates 2 distinct objs
+ - If k not in one, check other
+ - Take arrs as params
+  * plaintxt charset
+  * ciphertxt charset
+ - Err handling
+  * charset arrs must be same length
+
+<-        Extra          ->
+ - Guide user through process
+   * create cipher scheme
+   * encrypt
+   * decrypt
+ - GUI
