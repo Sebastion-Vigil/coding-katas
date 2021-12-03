@@ -89,3 +89,9 @@ console.log(mapFeed)
 const Map = new MapObj()
 Map.createMap(mapFeed)
 Map.printMap()
+
+
+const testFeed = {'a': 'one', 'b': 'two', 'c': 'three', 'd': 'four', 'e': 'five'}
+const testMap = new MapObj()
+testMap.createMap(testFeed)
+testMap.printMap()
