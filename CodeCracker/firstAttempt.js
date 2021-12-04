@@ -28,7 +28,7 @@ class MapObj {
   printVal (v) {
     console.log(this.biMap[v])
   }
-
+  // had I used an else block would've known lol
   insertPair (k, v) {
     if (this.validateUnique(k)) {
       this.biMap[k] = v
