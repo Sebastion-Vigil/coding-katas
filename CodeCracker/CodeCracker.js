@@ -18,21 +18,23 @@ class BiCrypt {
    // convert alpha txt to ciper txt
    const encryptedTxt = []
    for (let i = 0; i < txt.length; i++) {
+     if (txt[i] === ' ') encryptedTxt.push(' ')
      encryptedTxt.push(this.cipher[txt[i]])
    }
-   console.log('encrypted text: ', encryptedTxt.join(''))
+   return encryptedTxt.join('')
   }
 
   decrypt (txt) {
   // convert ciper txt to alpha txt
   const decryptedTxt = []
   for (let i = 0; i < txt.length; i++) {
+    if (txt[i] === ' ') decryptedTxt.push(' ')
     decryptedTxt.push(this.alpha[txt[i]])
   }
-  console.log('decrypted text: ', decryptedTxt.join(''))
+  return decryptedTxt.join('')
   }
 
-  displaySelf() {
+  display() {
     console.log("this.alpha: ", this.alpha)
     console.log("this.cipher: ", this.cipher)
   }
@@ -72,16 +74,13 @@ const cipherText = [
     'o'
   ]
 
-const enDeCrypt = new BiCrypt()
+const bCrypt = new BiCrypt()
 
-enDeCrypt.setEncryptionScheme(alphabet, cipherText)
+bCrypt.setEncryptionScheme(alphabet, cipherText)
 
-enDeCrypt.displaySelf()
+const msg = 'hello world'
 
-const plainText = 'hello world'
-
-enDeCrypt.encrypt(plainText)
-
-const cryptic = '&£aadldga('
-
-enDeCrypt.decrypt(cryptic)
+const encryptedMsg = bCrypt.encrypt(msg)
+console.log("encrypted message: ", encryptedMsg)
+const decryptedMsg = bCrypt.decrypt(encryptedMsg)
+console.log("decryptedMsg: ", decryptedMsg)
