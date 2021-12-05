@@ -4,7 +4,8 @@
 // https://stackoverflow.com/questions/10699492/bi-directional-map-in-java
 
 // 1st attempted solution, map obj not viable -> unique entries only
-
+// NOT good for this coding challenge
+// HOWEVER -> good naive solution 4 map object
 // first our Map class
 class MapObj {
   constructor () {
